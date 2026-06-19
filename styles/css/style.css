@@ -355,27 +355,28 @@ section.reveal:nth-of-type(odd){
     max-width:1100px;
     margin:40px auto;
 
-    display:flex;
-    gap:25px;
-
-    overflow-x:auto;
-    scroll-behavior:smooth;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap:50px;
+    column-gap:60px;
 
     padding-bottom:10px;
 }
 
-#reviews::-webkit-scrollbar{
-    height:6px;
+@media (max-width: 900px){
+    #reviews{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-#reviews::-webkit-scrollbar-thumb{
-    background:#8d2123;
-    border-radius:10px;
+@media (max-width: 600px){
+    #reviews{
+        grid-template-columns: 1fr;
+    }
 }
 
 .review{
-    min-width:240px;
-    max-width:260px;
+    width:100%;
     background:#fff;
 
     padding:25px;
